@@ -1,0 +1,19 @@
+/* Styles go here */
+input[type= url] {
+    margin-left: 50px;
+    padding-right: 120px;
+}
+
+input[type = file] {
+    margin-left: 40px;
+}
+
+input[type = submit] {
+    margin-left: 20px;
+    background-color: #1c1c84;
+    color: white;
+}
+
+input[type = button] {
+    margin-left: 310px;
+}
