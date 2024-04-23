@@ -45,16 +45,16 @@ class App extends Component {
                 <div className="form">
                   <form onSubmit={this.onSubmit}> 
                     <p>
-                      <label htmlFor="url">Enter the URL:</label>
-                      <input type="url" />
+                      <label htmlFor="urlInput" id="urlLabel">Enter the URL:</label>
+                      <input type="url" id="urlInput" />
                     </p>
                     <p>
-                      <label htmlFor="file">Upload an Image:</label>
-                      <input type="file" onChange={this.captureFile}/>
+                      <label htmlFor="fileInput" id="fileLabel">Upload an Image:</label>
+                      <input type="file" id="fileInput" onChange={this.captureFile}/>
                     </p>
                     <p>
-                      <input type="button" value="Cancel" />
-                      <input type="submit" value="Submit" />
+                      <input type="button" id="cancelBtn" value="Cancel" />
+                      <input type="submit" id="submitBtn" value="Submit" />
                     </p>
                   </form>
                 </div>
