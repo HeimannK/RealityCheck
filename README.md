@@ -6,6 +6,7 @@ Repository for COIT13236 Term 1 2024 - Project 9 Team
 The instructions below assume you have the following software installed
 * Git
 * Node.js
+* VS Code or any text editor
 * Truffle ```npm install -g truffle```
 * Ganache
 * MetaMask
