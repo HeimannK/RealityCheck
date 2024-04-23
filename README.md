@@ -1,17 +1,33 @@
 # RealityCheck
 Repository for COIT13236 Term 1 2024 - Project 9 Team
 
+# Before you begin
+
+The instructions below assume you have the following software installed
+* Git
+* Node.js
+* Truffle ```npm install -g truffle```
+* Ganache
+* MetaMask
 
 # Cloning and preparing the decentralized application
 
+Open a terminal and avigate to the location you want to clone the repository into.
+*Windows users may need to use Git Bash to run git commands from the command line*
+
 Clone the repo to your local machine
 ```
-git clone https://github.com/HeimannK/RealityCheck.git realityCheck
+git clone https://github.com/HeimannK/RealityCheck.git RealityCheck
 ```
 
-Change to the directory
+Or 
+``` 
+git clone https://github.com/HeimannK/RealityCheck.git
 ```
-cd realityCheck // Windows
+
+Change to the directory you just created
+```
+cd RealityCheck
 ```
 
 Install dependencies
