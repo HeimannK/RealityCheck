@@ -48,7 +48,22 @@ Check the node_modules folder has been created
 
 
 
+# Install the following dependencies
+
+npm install -g truffle
+```
+./node_modules/.bin/truffle init
+```
+npm install solidity
+```
+npm install web3
+```
+npm ipfs-api
+```
+
+
 # Running the decentralized application
+
 
 From the directory run
 ```
