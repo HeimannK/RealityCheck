@@ -21,8 +21,8 @@ const uploadToPinata = async (file) => {
         url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
         data: formData,
         headers: {
-          pinata_api_key: '111b366aea5a0318b271',
-          pinata_secret_api_key: '60392a932a1687b0046d780e09440dd577207ba2752f9726f377ccfc629046a0',
+          pinata_api_key: 'f133a376d3ed17de0783',
+          pinata_secret_api_key: 'd4bbb2603dff9a92f96a730eb62550a775e598233c6af33c3c4cb4856b1f5265',
           "Content-Type": "multipart/form-data",
         },
       });
