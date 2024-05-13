@@ -149,8 +149,8 @@ render() {
       <main className="container">
         <div className="pure-g">
           <div className="pure-u-1-1">
-            <h1>Your Image</h1>
-            <p>Your image will be stored on IPFS!</p>
+            <h1>Your File</h1>
+            <p>Your File will be stored on IPFS!</p>
             <h2>Upload Image</h2>
             {/* <p>URL: `https://gateway.pinata.cloud/ipfs/${this.state.ipfsHash}`</p> */}
             <form onSubmit={this.onSubmit} >
