@@ -63,6 +63,7 @@ npm ipfs-api
 ```
 
 
+
 # Running the decentralized application
 
 ```
@@ -71,6 +72,11 @@ From the directory run
 npm run start
 ```
 This will open the application on your default web browser
-
-
+```
+npm install truffle-contract
+```
+npm install axios
+```
+./node_modules/.bin/truffle init
+```
 
