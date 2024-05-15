@@ -59,7 +59,7 @@ npm install solidity
 ```
 npm install web3
 ```
-npm ipfs-api
+npm install ipfs-api
 ```
 
 
