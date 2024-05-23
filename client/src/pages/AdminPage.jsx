@@ -157,7 +157,7 @@ const AdminPage = () => {
   }
 
   return (
-    <div style={{ height: '100vh', 'background': 'linear-gradient(-135deg, #7aafff 0%, #f4ffbd 100%)' }}>
+    <div style={{ height: '100vh', 'background': 'white' }}>
       <div className="container">
       
       <h1 className="fw-bold m-0 p-0 lh-1 pt-3 fs-2 ps-3 d-flex justify-content-between align-items-end">
