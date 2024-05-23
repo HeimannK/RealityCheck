@@ -14,7 +14,7 @@ const HomePage = () => {
 
       <hr style={{ maxWidth: '500px', 'color': 'rgba(0, 0, 0, 0.5)' }} className="w-100 my-3" />
       <p style={{ maxWidth: '500px' }} className="text-center opacity-75 lh-sm m-0">
-        A blockchain-based system ensuring the authenticity of ABC Pty. Ltd.'s news articles and images through secure smart contracts.
+        A BLOCKCHAIN NETWORK TO PREVENT DEEP FAKE NEWS OR PHOTOGRAPH
       </p>
       <hr style={{ maxWidth: '500px', 'color': 'rgba(0, 0, 0, 0.5)' }} className="w-100 my-3" />
 
