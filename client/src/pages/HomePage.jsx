@@ -6,7 +6,7 @@ const HomePage = () => {
 
   return (
     <div className="d-flex flex-column align-items-center justify-content-center"
-      style={{ height: '100vh', 'background': 'linear-gradient(-135deg, #7aafff 0%, #f4ffbd 100%)' }}>
+      style={{ height: '100vh', 'background': 'white' }}>
       <h1 className="fw-bold m-0 p-0 lh-1">
         <span className="text-primary">Reality</span><span className="text-danger">Check</span>
       </h1>
