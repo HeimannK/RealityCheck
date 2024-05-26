@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from 'client\src\pages\logo.png';
 
 const HomePage = () => {
   document.title = 'RealityCheck | DApp';
@@ -8,13 +7,12 @@ const HomePage = () => {
     <div className="d-flex flex-column align-items-center justify-content-center"
       style={{ height: '100vh', 'background': 'white' }}>
       <h1 className="fw-bold m-0 p-0 lh-1">
-        <span className="text-primary">Reality</span><span className="text-danger">Check</span>
+        <img src="./assets/logo.jpeg" alt="RealityCheck" style={{ height: '7.5rem', borderRadius: '1rem' }} />
       </h1>
-      {/* <img src={logo} alt="" /> */}
 
       <hr style={{ maxWidth: '500px', 'color': 'rgba(0, 0, 0, 0.5)' }} className="w-100 my-3" />
       <p style={{ maxWidth: '500px' }} className="text-center opacity-75 lh-sm m-0">
-        A BLOCKCHAIN NETWORK TO PREVENT DEEP FAKE NEWS OR PHOTOGRAPH
+        A blockchain-based system ensuring the authenticity of ABC Pty. Ltd.'s news articles and images through secure smart contracts.
       </p>
       <hr style={{ maxWidth: '500px', 'color': 'rgba(0, 0, 0, 0.5)' }} className="w-100 my-3" />
 
