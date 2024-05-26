@@ -37,6 +37,7 @@ const UserPage = () => {
     setIsPublishedByABC(null);
 
     const articleURL = event.target['article-url'].value;
+    console.log([verificationSmartContract, setVerificationSmartContract])
     try {
       if (!verificationSmartContract) {
         console.error("VerificationSmartContract Not Initialized!");
@@ -45,6 +46,7 @@ const UserPage = () => {
 
       setStatus("Verifying Article URL...");
       const isAlreadyAdded = await verificationSmartContract.methods.verifyMetadata(articleURL).call();
+      
       setIsPublishedByABC(isAlreadyAdded[0]);
       setStatus(null);
 
@@ -58,6 +60,7 @@ const UserPage = () => {
 
   const uploadToPinata = async (data, fileName) => {
     const formData = new FormData();
+    console.log(data)
     formData.append('file', data);
     formData.append("pinataMetadata", JSON.stringify({ name: fileName }));
     formData.append("pinataOptions", JSON.stringify({ cidVersion: 0 }));
@@ -101,7 +104,7 @@ const UserPage = () => {
 
       setStatus("Verifying Article Image...");
       const isAlreadyAdded = await verificationSmartContract.methods.verifyMetadata(ipfsHash.IpfsHash).call();
-
+      
       if (!isAlreadyAdded[0]) {
         await fetch(`https://api.pinata.cloud/pinning/unpin/${ipfsHash.IpfsHash}`, {
           method: 'DELETE',
@@ -124,8 +127,8 @@ const UserPage = () => {
     <div style={{ height: '100vh', 'background': 'white' }}>
       <div className="container">
         <h1 className="fw-bold m-0 p-0 lh-1 pt-3 fs-2 ps-3 d-flex justify-content-between align-items-end">
-          <a href="/" className="text-decoration-none">
-            <span className="text-primary">Reality</span><span className="text-danger">Check</span>
+          <a href="/" className="text-decoration-none" style={{ outline: 'none' }}>
+            <img src="./assets/logo.jpeg" alt="RealityCheck" style={{ height: '4rem', borderRadius: '0.725rem', }} />
           </a>
           <span className="text-muted fs-5 fw-medium pe-3 d-flex align-items-center">
             <small><span className="badge bg-primary ms-2">{address}</span></small>
