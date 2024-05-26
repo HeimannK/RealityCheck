@@ -137,7 +137,7 @@ const UserPage = () => {
         <hr style={{ 'color': 'rgba(0, 0, 0, 0.5)' }} className="w-100 my-3" />
 
         {isPublishedByABC !== null && <div className="alert alert-primary mt-3 mx-3 dismissible fade show d-flex justify-content-between align-items-center" role="alert">
-          {isPublishedByABC ? "The Article is Published by ABC." : "The Article is NOT Published by ABC."}
+          {isPublishedByABC ? "The Content is Published by ABC." : "The Content is NOT Published by ABC."}
           <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>}
 
