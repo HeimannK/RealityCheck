@@ -76,8 +76,18 @@ const AdminPage = () => {
         return;
       }
 
+      const metadata = {
+        url: articleURL,
+        protocol: articleURL.split(':')[0] || null,
+        hostname: new URL(articleURL).hostname || null,
+        pathname: new URL(articleURL).pathname || null,
+        search: new URL(articleURL).search || null,
+        hash: new URL(articleURL).hash || null,
+      };
+      console.log(metadata)
+
       setStatus("Adding Article URL to the Blockchain...");
-      await verificationSmartContract.methods.addMetadata(articleURL).send({ from: web3.eth.defaultAccount });
+      await verificationSmartContract.methods.addMetadata(metadata.url).send({ from: web3.eth.defaultAccount });
       setStatus(null);
       alert("Article URL Added Successfully to the Blockchain!");
 
@@ -100,7 +110,8 @@ const AdminPage = () => {
       const response = await fetch('https://api.pinata.cloud/pinning/pinFileToIPFS', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJiMTQzZmZiNS00NWEzLTQwYTMtODYzNi1hYzJjY2ViZTRhMzciLCJlbWFpbCI6Imh5cGhlbnNhYWRAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siaWQiOiJGUkExIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9LHsiaWQiOiJOWUMxIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZSwic3RhdHVzIjoiQUNUSVZFIn0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6IjcyOThlZGViNTkxMGNmYzcyNjRiIiwic2NvcGVkS2V5U2VjcmV0IjoiY2RiYjc0NDBhMWFkZmVhOTdhYmU4YWQ3OTU2ZGE3YTI2Y2UxZTA4MWQ3NmI4OWI5MDVlYmJmMzJmZTUyYTQyZiIsImlhdCI6MTcxNjExMjI1MX0.ZbHSrYiXDtspi680AATrrVjK5nIucGX3MppRBIdv3pA`,
+          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJkNmMxNTZhYy0yNmRiLTQ0YzctODEyMi02YzdjYjEyZDY0NjAiLCJlbWFpbCI6InNhbG1hbi5pZGcwOThAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siaWQiOiJGUkExIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9LHsiaWQiOiJOWUMxIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZSwic3RhdHVzIjoiQUNUSVZFIn0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6Ijc5Mzg2MzlhZmU3ZWM2NGQ0N2UwIiwic2NvcGVkS2V5U2VjcmV0IjoiZTVhNjZhOWZjODAwOGU3YTYxNmU5MWUxN2Y4N2Q0MWUzYjk3ZDgxZDVlNzE4YTAzMTNjODJhZDM2OTNhY2NmNyIsImlhdCI6MTcxNjM5MTMxOH0.8riNzbCqrqVdYrJPhgNyurGuxYYmHDSCptd9oS4ESc8`,
+          // 'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJiMTQzZmZiNS00NWEzLTQwYTMtODYzNi1hYzJjY2ViZTRhMzciLCJlbWFpbCI6Imh5cGhlbnNhYWRAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siaWQiOiJGUkExIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9LHsiaWQiOiJOWUMxIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZSwic3RhdHVzIjoiQUNUSVZFIn0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6IjcyOThlZGViNTkxMGNmYzcyNjRiIiwic2NvcGVkS2V5U2VjcmV0IjoiY2RiYjc0NDBhMWFkZmVhOTdhYmU4YWQ3OTU2ZGE3YTI2Y2UxZTA4MWQ3NmI4OWI5MDVlYmJmMzJmZTUyYTQyZiIsImlhdCI6MTcxNjExMjI1MX0.ZbHSrYiXDtspi680AATrrVjK5nIucGX3MppRBIdv3pA`,
         },
         body: formData,
       });
@@ -142,8 +153,18 @@ const AdminPage = () => {
         return;
       }
 
+      const metadata = {
+        ipfsHash: ipfsHash.IpfsHash,
+        ipfsURL: `https://gateway.pinata.cloud/ipfs/${ipfsHash.IpfsHash}`,
+        fileName: articleImage.name,
+        fileType: articleImage.type,
+        fileSize: articleImage.size,
+        fileExtension: articleImage.name.split('.').pop(),
+      };
+      console.log(metadata)
+
       setStatus("Adding Article Image to the Blockchain...");
-      await verificationSmartContract.methods.addMetadata(ipfsHash.IpfsHash).send({ from: web3.eth.defaultAccount });
+      await verificationSmartContract.methods.addMetadata(metadata.ipfsHash).send({ from: web3.eth.defaultAccount });
       setStatus(null);
       alert("Article Image Added Successfully to the Blockchain!");
 
@@ -159,11 +180,9 @@ const AdminPage = () => {
   return (
     <div style={{ height: '100vh', 'background': 'white' }}>
       <div className="container">
-      
-      <h1 className="fw-bold m-0 p-0 lh-1 pt-3 fs-2 ps-3 d-flex justify-content-between align-items-end">
-          <a href="/" className="text-decoration-none">
-            <span className="text-primary">Reality</span><span className="text-danger">Check</span>
-            
+        <h1 className="fw-bold m-0 p-0 lh-1 pt-3 fs-2 ps-3 d-flex justify-content-between align-items-end">
+          <a href="/" className="text-decoration-none" style={{ outline: 'none' }}>
+            <img src="./assets/logo.jpeg" alt="RealityCheck" style={{ height: '4rem', borderRadius: '0.725rem', }} />
           </a>
           <span className="text-muted fs-5 fw-medium pe-3 d-flex align-items-center">
             <small><span className="badge bg-primary ms-2">{address}</span></small>
